@@ -19,8 +19,8 @@ package org.killer.springclouddubbo.dubbo.demo.provider;
 import org.killer.springclouddubbo.dubbo.demo.api.EchoService;
 import org.apache.dubbo.config.annotation.Service;
 
-@Service(protocol = "dubbo")
-class EchoServiceImpl implements EchoService {
+@Service(protocol = "org.killer.springclouddubbo.dubbo.demo.api.EchoService")
+public class EchoServiceImpl implements EchoService {
 
     @Override
     public String echo(String message) {

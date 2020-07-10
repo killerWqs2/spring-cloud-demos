@@ -28,7 +28,7 @@ import java.util.Map;
 /**
  * In-Memory {@link UserService} implementation.
  */
-@Service(protocol = "dubbo")
+@Service(protocol = "org.killer.springclouddubbo.dubbo.demo.api.EchoService")
 public class InMemoryUserServiceImpl implements UserService {
 
     private Map<Long, User> usersRepository = new HashMap<>();

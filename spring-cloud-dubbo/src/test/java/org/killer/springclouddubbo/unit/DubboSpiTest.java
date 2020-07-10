@@ -2,8 +2,7 @@ package org.killer.springclouddubbo.unit;
 
 import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.junit.jupiter.api.Test;
-
-import java.security.cert.Extension;
+import org.killer.springclouddubbo.dubbo.demo.api.EchoService;
 
 /**
  * @author wqs
@@ -14,7 +13,14 @@ public class DubboSpiTest {
 
     @Test
     public void test() {
-        ExtensionLoader.getExtensionLoader()
+
+        // spi service provider interface 服务发现机制
+        ExtensionLoader<EchoService> extensionLoader = ExtensionLoader.getExtensionLoader(EchoService.class);
+
+        EchoService defaultExtension = extensionLoader.getExtension("echoService");
+
+        System.out.println(defaultExtension.echo("biubiubiu"));
+
     }
 
 }

@@ -1,0 +1,1 @@
+echoService=org.killer.springclouddubbo.dubbo.demo.provider.EchoServiceImpl

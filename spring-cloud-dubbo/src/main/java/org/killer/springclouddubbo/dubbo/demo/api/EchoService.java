@@ -16,9 +16,12 @@
 
 package org.killer.springclouddubbo.dubbo.demo.api;
 
+import org.apache.dubbo.common.extension.SPI;
+
 /**
  * Echo Service.
  */
+@SPI
 public interface EchoService {
 
     String echo(String message);
