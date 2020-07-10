@@ -3,16 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.killer</groupId>
-    <artifactId>spring-cloud-dubbo</artifactId>
+    <artifactId>spring-cloud-zookeeper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-dubbo</name>
+    <name>spring-cloud-zookeeper</name>
     <description>Demo project for Spring Boot</description>
-
-    <modules>
-        <module>spring-cloud-dubbo-provider</module>
-        <module>spring-cloud-duubo-consumer</module>
-        <module>dubbo-sdk</module>
-    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -23,16 +17,13 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-starter-zookeeper-config</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
         </dependency>
 
         <dependency>

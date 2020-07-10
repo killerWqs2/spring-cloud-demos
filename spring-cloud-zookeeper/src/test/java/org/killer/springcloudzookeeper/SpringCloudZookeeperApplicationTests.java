@@ -1,10 +1,10 @@
-package org.killer.dubbosdk;
+package org.killer.springcloudzookeeper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DubboSdkApplicationTests {
+class SpringCloudZookeeperApplicationTests {
 
     @Test
     void contextLoads() {
