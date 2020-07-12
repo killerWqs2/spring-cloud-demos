@@ -12,6 +12,7 @@
     <modules>
         <module>spring-cloud-oauth2</module>
         <module>spring-cloud-dubbo</module>
+        <module>spring-cloud-zookeeper</module>
     </modules>
 
     <properties>
