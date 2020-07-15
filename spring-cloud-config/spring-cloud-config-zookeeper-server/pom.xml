@@ -9,16 +9,18 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-config-client</artifactId>
+    <artifactId>spring-cloud-config-zookeeper-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-config-client</name>
+    <name>spring-cloud-config-zookeeper-server</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-starter-zookeeper-config</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

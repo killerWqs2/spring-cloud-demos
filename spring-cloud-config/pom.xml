@@ -13,10 +13,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
     </properties>
 
     <modules>
         <module>spring-cloud-config-server</module>
+        <module>spring-cloud-config-client</module>
+        <module>spring-cloud-config-zookeeper-server</module>
     </modules>
 
     <dependencies>
@@ -47,6 +50,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -67,5 +78,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
