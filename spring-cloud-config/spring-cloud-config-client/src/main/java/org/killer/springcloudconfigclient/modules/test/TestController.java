@@ -1,4 +1,4 @@
-package org.killer.springcloudconfigserver.modules.test;
+package org.killer.springcloudconfigclient.modules.test;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @description
  */
 @RefreshScope
-//@RestController
+@RestController
 public class TestController {
 
     @Value("${serverport}")
