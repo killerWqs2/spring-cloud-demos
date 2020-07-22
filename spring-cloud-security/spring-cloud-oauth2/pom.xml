@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>org.killer</groupId>
-        <artifactId>sprng-cloud-demos</artifactId>
+        <artifactId>spring-cloud-security</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

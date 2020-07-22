@@ -10,9 +10,12 @@
     <description>Demo project for Spring cloud</description>
 
     <modules>
-        <module>spring-cloud-oauth2</module>
         <module>spring-cloud-dubbo</module>
         <module>spring-cloud-zookeeper</module>
+        <module>spring-cloud-config</module>
+        <module>spring-cloud-gateway</module>
+        <module>spring-cloud-security</module>
+        <module>spring-cloud-services</module>
     </modules>
 
     <properties>
