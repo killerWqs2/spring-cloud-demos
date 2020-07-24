@@ -8,6 +8,11 @@
     <name>spring-cloud-services</name>
     <description>Demo project for Spring Boot</description>
 
+    <modules>
+        <module>spring-cloud-service-t0</module>
+        <module>spring-cloud-service-user-manager-center</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
