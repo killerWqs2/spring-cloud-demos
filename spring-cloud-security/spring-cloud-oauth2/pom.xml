@@ -18,7 +18,7 @@
     <modules>
         <module>spring-cloud-oauth2-authorization-server</module>
         <module>spring-cloud-oauth2-resource-server</module>
-        <module>spring-cloud-oauth2-server</module>
+        <module>spring-cloud-oauth2-client-server</module>
     </modules>
 
     <properties>
@@ -39,6 +39,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
     </dependencies>

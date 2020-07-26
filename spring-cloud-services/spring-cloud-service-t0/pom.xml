@@ -9,17 +9,19 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-service-b</artifactId>
+    <artifactId>spring-cloud-service-t0</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-service-b</name>
+    <name>spring-cloud-service-t0</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    </properties>
+    <modules>
+        <module>t0-listedcompany</module>
+        <module>t0-algorithm</module>
+        <module>t0-concept</module>
+        <module>t0-core</module>
+        <module>t0-data</module>
+        <module>t0-sharedata</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -27,18 +29,6 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>

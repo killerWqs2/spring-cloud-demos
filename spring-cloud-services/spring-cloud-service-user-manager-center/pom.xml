@@ -9,9 +9,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-service-a</artifactId>
+    <artifactId>spring-cloud-service-user-manager-center</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-service-a</name>
+    <name>spring-cloud-service-user-manager-center</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

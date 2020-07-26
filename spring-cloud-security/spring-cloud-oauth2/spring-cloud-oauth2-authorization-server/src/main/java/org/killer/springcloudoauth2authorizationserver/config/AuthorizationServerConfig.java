@@ -42,10 +42,20 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         // 内置一个 client， 应用吧, oauth2 rfc文档就将这个称之为client，另外就是 authorizatin-server, resource-server
         clients.inMemory().withClient("test")
+                // 客户端模式
                 .secret("{noop}$2a$10$J9fGzwblYSR0TxeBNjtJC.wCyhN4cSnEHaEqYFQsdKVR7K5fWk0tu")
-                .redirectUris("")
                 .authorizedGrantTypes("client_credentials")
+                .scopes("all")
+                .and().inMemory()
+                // 授权码模式
+                .withClient("t0")
+                .secret("{noop}wqsqzj")
+                // 用于认证完之后跳转回自己系统的连接
+                .redirectUris("")
+                .authorizedGrantTypes("authorization_code")
                 .scopes("all");
+
+        // oauth2要实现sso就是需要将第三方登录默认为自己的登录方式，，
     }
     // 感觉还是很复杂的，,
 

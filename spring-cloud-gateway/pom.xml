@@ -11,6 +11,7 @@
 
     <modules>
         <module>spring-cloud-gateway-zuul</module>
+        <module>spring-cloud-gateway-gateway</module>
     </modules>
 
     <properties>
