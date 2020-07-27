@@ -8,7 +8,7 @@
 
 <body>
 <main>
-    <form class="form" method="post" onsubmit="return false;">
+    <form class="form" method="post" action="/user/login" onsubmit="return false;">
         <div class="form__cover"></div>
         <div class="form__loader">
             <div class="spinner active">
@@ -66,7 +66,7 @@
     // submit form
     function submitForm() {
         // 这个登录页面用于oauth2登录，，
-        document.forms[0].action = "/oauth/authorize?client_id=" + getQueryVariable("client_id") + "&response_type=code&redirect_uri=" + getQueryVariable("redirect_uri");
+        // document.forms[0].action = "/oauth/authorize?client_id=" + getQueryVariable("client_id") + "&response_type=code&redirect_uri=" + getQueryVariable("redirect_uri");
         document.forms[0].submit();
     }
 </script>

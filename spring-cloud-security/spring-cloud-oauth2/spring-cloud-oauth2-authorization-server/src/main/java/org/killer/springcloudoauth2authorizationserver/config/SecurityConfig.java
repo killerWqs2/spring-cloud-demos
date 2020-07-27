@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/**").antMatchers("/favicon.ico");
+        web.ignoring().antMatchers("/static/**", "/favicon.ico");
     }
 
     @Override
@@ -40,7 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 配置登录页面, 有时候就是什么也不想干，就是一点意义没有，，看不到希望，，看不到希望
         // 可以配置静态资源的吗？？路径还是通过配置中心获取比较好
-        http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage(projectProperties.getLoginPath()).permitAll();
+        http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginProcessingUrl("/user/login").permitAll()
+                .loginPage(projectProperties.getLoginPath()).permitAll()
+                .and().csrf().disable();
 
     }
 
@@ -51,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // auth.parentAuthenticationManager()
         // auth.authenticationProvider(oauth2ClientCredentialsAuthenticationProvider());
         // 这个所谓的LocalConfigureAuthentication 指的是当前securityfilterchain里面的authenticationmanager
+        auth.inMemoryAuthentication().withUser("killerWqs").password("{noop}wqsqzj").roles("admin");
     }
 
     @Configuration
