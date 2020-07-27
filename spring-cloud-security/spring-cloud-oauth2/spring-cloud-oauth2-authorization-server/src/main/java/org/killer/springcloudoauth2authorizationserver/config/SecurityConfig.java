@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 
@@ -25,6 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(ProjectProperties projectProperties, ClientDetailsService clientDetailsService) {
         this.projectProperties = projectProperties;
         this.clientDetailsService = clientDetailsService;
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/static/**").antMatchers("/favicon.ico");
     }
 
     @Override
