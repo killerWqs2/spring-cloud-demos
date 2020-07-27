@@ -46,7 +46,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret("{noop}$2a$10$J9fGzwblYSR0TxeBNjtJC.wCyhN4cSnEHaEqYFQsdKVR7K5fWk0tu")
                 .authorizedGrantTypes("client_credentials")
                 .scopes("all")
-                .and().inMemory()
+                .and()
                 // 授权码模式
                 .withClient("t0")
                 .secret("{noop}wqsqzj")
