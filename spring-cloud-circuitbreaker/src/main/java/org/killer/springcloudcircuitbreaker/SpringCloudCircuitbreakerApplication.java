@@ -1,13 +1,13 @@
-package org.killer.springcloudnacos;
+package org.killer.springcloudcircuitbreaker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 
 @SpringCloudApplication
-public class SpringCloudNacosApplication {
+public class SpringCloudCircuitbreakerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudNacosApplication.class, args);
+        SpringApplication.run(SpringCloudCircuitbreakerApplication.class, args);
     }
 
 }

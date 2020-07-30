@@ -1,0 +1,7 @@
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.107.106.214:8848
+        group: system

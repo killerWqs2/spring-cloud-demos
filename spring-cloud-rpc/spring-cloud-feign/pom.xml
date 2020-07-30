@@ -4,22 +4,15 @@
 
     <parent>
         <groupId>org.killer</groupId>
-        <artifactId>spring-cloud-services</artifactId>
+        <artifactId>spring-cloud-rpc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-service-user-manager-center</artifactId>
+    <artifactId>spring-cloud-feign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-service-user-manager-center</name>
+    <name>spring-cloud-feign</name>
     <description>Demo project for Spring Boot</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    </properties>
 
     <dependencies>
         <dependency>

@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.107.106.214:8848
+
+# 设置为true feign会被hsytrix breaker包围
+feign:
+  hystrix:
+    enabled: true
+

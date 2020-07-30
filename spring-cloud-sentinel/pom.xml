@@ -4,28 +4,21 @@
 
     <parent>
         <groupId>org.killer</groupId>
-        <artifactId>spring-cloud-services</artifactId>
+        <artifactId>sprng-cloud-demos</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-cloud-service-user-manager-center</artifactId>
+    <artifactId>spring-cloud-sentinel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-service-user-manager-center</name>
+    <name>spring-cloud-sentinel</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    </properties>
-
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
