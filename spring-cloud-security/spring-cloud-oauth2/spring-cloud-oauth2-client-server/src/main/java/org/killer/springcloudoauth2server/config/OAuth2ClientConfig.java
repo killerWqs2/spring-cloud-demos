@@ -7,12 +7,14 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 /**
  * @author killer
  * @date 2020/07/26 - 22:32
  */
 @Configuration
+@EnableOAuth2Client
 @EnableOAuth2Sso // 这个需要配合oauth2Client使用
 public class OAuth2ClientConfig extends WebSecurityConfigurerAdapter {
 
@@ -29,6 +31,7 @@ public class OAuth2ClientConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        // 这个主要用来自定义第三方登录路径的，，
         DefaultOAuth2AuthorizationRequestResolver defaultOAuth2AuthorizationRequestResolver = new DefaultOAuth2AuthorizationRequestResolver(clientRegistrationRepository, projectProperties.getLoginPath());
 
         // 开启oauth2 授权码模式, 这个是没有办法跟Sso公用的，这里他持久化了开始的请求

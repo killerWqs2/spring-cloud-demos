@@ -19,6 +19,7 @@
         <module>spring-cloud-oauth2-authorization-server</module>
         <module>spring-cloud-oauth2-resource-server</module>
         <module>spring-cloud-oauth2-client-server</module>
+        <module>spring-cloud-oauth2-sso-server</module>
     </modules>
 
     <properties>

@@ -17,6 +17,7 @@
         <module>spring-cloud-security</module>
         <module>spring-cloud-services</module>
         <module>spring-cloud-sentinel</module>
+        <module>spring-cloud-circuitbreaker</module>
     </modules>
 
     <properties>

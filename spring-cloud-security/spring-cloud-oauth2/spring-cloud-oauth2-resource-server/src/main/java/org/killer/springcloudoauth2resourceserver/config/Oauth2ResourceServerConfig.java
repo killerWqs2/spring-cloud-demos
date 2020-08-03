@@ -22,12 +22,13 @@ public class Oauth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         super.configure(resources);
-        resources.tokenStore(new RedisTokenStore(lettuceConnectionFactory()));
+        resources.tokenStore(new RedisTokenStore(lettuceConnectionFactory())).tokenExtractor(new ParameterTokenExtrator());
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         super.configure(http);
+        // http.csrf().disable();
     }
 
     @Bean

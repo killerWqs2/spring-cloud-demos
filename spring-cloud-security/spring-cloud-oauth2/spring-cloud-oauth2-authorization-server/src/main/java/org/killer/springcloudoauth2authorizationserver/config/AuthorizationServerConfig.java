@@ -56,8 +56,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .withClient("t0")
                 .secret("{noop}wqsqzj")
                 // 用于认证完之后跳转回自己系统的连接
-                .redirectUris("http://client_server:8082/test")
-                .authorizedGrantTypes("authorization_code")
+                .redirectUris("http://client-server:8084/login")
+                .authorizedGrantTypes("authorization_code", "refresh_token")
                 .scopes("all")
                 .autoApprove(true);
 
