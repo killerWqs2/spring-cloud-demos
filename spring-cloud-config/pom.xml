@@ -20,6 +20,7 @@
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-config-client</module>
         <module>spring-cloud-config-zookeeper-server</module>
+        <module>spring-cloud-config-nacos</module>
     </modules>
 
     <dependencies>
