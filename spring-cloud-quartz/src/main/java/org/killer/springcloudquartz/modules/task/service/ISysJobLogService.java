@@ -17,7 +17,7 @@ public interface ISysJobLogService
      * @param jobLog 调度日志信息
      * @return 调度任务日志集合
      */
-    public List<SysJobLog> selectJobLogList(com.huida.hd.job.entity.SysJobLog jobLog);
+    public List<SysJobLog> selectJobLogList(SysJobLog jobLog);
 
     /**
      * 通过调度任务日志ID查询调度信息
@@ -25,14 +25,14 @@ public interface ISysJobLogService
      * @param jobLogId 调度任务日志ID
      * @return 调度任务日志对象信息
      */
-    public com.huida.hd.job.entity.SysJobLog selectJobLogById(Long jobLogId);
+    public SysJobLog selectJobLogById(Long jobLogId);
 
     /**
      * 新增任务日志
      * 
      * @param jobLog 调度日志信息
      */
-    public void addJobLog(com.huida.hd.job.entity.SysJobLog jobLog);
+    public void addJobLog(SysJobLog jobLog);
 
     /**
      * 批量删除调度日志信息

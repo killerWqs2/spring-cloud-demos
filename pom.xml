@@ -19,6 +19,7 @@
         <module>spring-cloud-sentinel</module>
         <module>spring-cloud-circuitbreaker</module>
         <module>spring-cloud-quartz</module>
+        <module>spring-cloud-common</module>
     </modules>
 
     <properties>

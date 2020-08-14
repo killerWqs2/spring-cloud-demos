@@ -1,7 +1,5 @@
 package org.killer.springcloudquartz.modules.task.service;
 
-import com.huida.hd.common.core.exception.job.TaskException;
-import com.huida.hd.job.entity.SysJob;
 import org.killer.springcloudquartz.modules.task.entity.SysJob;
 import org.quartz.SchedulerException;
 
@@ -20,7 +18,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 调度任务集合
      */
-    public List<SysJob> selectJobList(com.huida.hd.job.entity.SysJob job);
+    public List<SysJob> selectJobList(SysJob job);
 
     /**
      * 通过调度任务ID查询调度信息
@@ -28,7 +26,7 @@ public interface ISysJobService
      * @param jobId 调度任务ID
      * @return 调度任务对象信息
      */
-    public com.huida.hd.job.entity.SysJob selectJobById(Long jobId);
+    public SysJob selectJobById(Long jobId);
 
     /**
      * 暂停任务
@@ -36,7 +34,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int pauseJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException;
+    public int pauseJob(SysJob job) throws SchedulerException;
 
     /**
      * 恢复任务
@@ -44,7 +42,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int resumeJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException;
+    public int resumeJob(SysJob job) throws SchedulerException;
 
     /**
      * 删除任务后，所对应的trigger也将被删除
@@ -52,7 +50,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int deleteJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException;
+    public int deleteJob(SysJob job) throws SchedulerException;
 
     /**
      * 批量删除调度信息
@@ -68,7 +66,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int changeStatus(com.huida.hd.job.entity.SysJob job) throws SchedulerException;
+    public int changeStatus(SysJob job) throws SchedulerException;
 
     /**
      * 立即运行任务
@@ -76,7 +74,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public void run(com.huida.hd.job.entity.SysJob job) throws SchedulerException;
+    public void run(SysJob job) throws SchedulerException;
 
     /**
      * 新增任务
@@ -84,7 +82,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int insertJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException, TaskException;
+    public int insertJob(SysJob job) throws SchedulerException;
 
     /**
      * 更新任务
@@ -92,7 +90,7 @@ public interface ISysJobService
      * @param job 调度信息
      * @return 结果
      */
-    public int updateJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException, TaskException;
+    public int updateJob(SysJob job) throws SchedulerException;
 
     /**
      * 校验cron表达式是否有效

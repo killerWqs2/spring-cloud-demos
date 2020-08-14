@@ -1,5 +1,6 @@
 package org.killer.springcloudquartz.modules.task.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.killer.springcloudquartz.modules.task.entity.SysJob;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
  * 
  * @author ruoyi
  */
+@Mapper
 public interface SysJobMapper
 {
     /**
@@ -16,7 +18,7 @@ public interface SysJobMapper
      * @param job 调度信息
      * @return 操作日志集合
      */
-    public List<SysJob> selectJobList(com.huida.hd.job.entity.SysJob job);
+    public List<SysJob> selectJobList(SysJob job);
 
     /**
      * 查询所有调度任务
@@ -31,7 +33,7 @@ public interface SysJobMapper
      * @param jobId 调度ID
      * @return 角色对象信息
      */
-    public com.huida.hd.job.entity.SysJob selectJobById(Long jobId);
+    public SysJob selectJobById(Long jobId);
 
     /**
      * 通过调度ID删除调度任务信息
@@ -55,7 +57,7 @@ public interface SysJobMapper
      * @param job 调度任务信息
      * @return 结果
      */
-    public int updateJob(com.huida.hd.job.entity.SysJob job);
+    public int updateJob(SysJob job);
 
     /**
      * 新增调度任务信息
@@ -63,5 +65,5 @@ public interface SysJobMapper
      * @param job 调度任务信息
      * @return 结果
      */
-    public int insertJob(com.huida.hd.job.entity.SysJob job);
+    public int insertJob(SysJob job);
 }

@@ -1,7 +1,6 @@
 package org.killer.springcloudquartz.modules.task.service.impl;
 
-import com.huida.hd.job.entity.SysJobLog;
-import com.huida.hd.job.mapper.SysJobLogMapper;
+import org.killer.springcloudquartz.modules.task.dao.SysJobLogMapper;
 import org.killer.springcloudquartz.modules.task.entity.SysJobLog;
 import org.killer.springcloudquartz.modules.task.service.ISysJobLogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import java.util.List;
 public class SysJobLogServiceImpl implements ISysJobLogService
 {
     @Autowired
-    private com.huida.hd.job.mapper.SysJobLogMapper jobLogMapper;
+    private SysJobLogMapper jobLogMapper;
 
     /**
      * 获取quartz调度器日志的计划任务
@@ -27,7 +26,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @return 调度任务日志集合
      */
     @Override
-    public List<SysJobLog> selectJobLogList(com.huida.hd.job.entity.SysJobLog jobLog)
+    public List<SysJobLog> selectJobLogList(SysJobLog jobLog)
     {
         return jobLogMapper.selectJobLogList(jobLog);
     }
@@ -39,7 +38,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @return 调度任务日志对象信息
      */
     @Override
-    public com.huida.hd.job.entity.SysJobLog selectJobLogById(Long jobLogId)
+    public SysJobLog selectJobLogById(Long jobLogId)
     {
         return jobLogMapper.selectJobLogById(jobLogId);
     }
@@ -50,7 +49,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
      * @param jobLog 调度日志信息
      */
     @Override
-    public void addJobLog(com.huida.hd.job.entity.SysJobLog jobLog)
+    public void addJobLog(SysJobLog jobLog)
     {
         jobLogMapper.insertJobLog(jobLog);
     }

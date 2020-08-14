@@ -1,12 +1,11 @@
 package org.killer.springcloudquartz.modules.task.service.impl;
 
-import com.huida.hd.common.core.constant.ScheduleConstants;
-import com.huida.hd.common.core.exception.job.TaskException;
-import com.huida.hd.job.entity.SysJob;
-import com.huida.hd.job.mapper.SysJobMapper;
-import com.huida.hd.job.util.CronUtils;
-import com.huida.hd.job.util.ScheduleUtils;
+import org.killer.springcloudquartz.modules.task.dao.SysJobMapper;
 import org.killer.springcloudquartz.modules.task.entity.SysJob;
+import org.killer.springcloudquartz.modules.task.service.ISysJobService;
+import org.killer.springcloudquartz.utils.CronUtils;
+import org.killer.springcloudquartz.utils.ScheduleConstants;
+import org.killer.springcloudquartz.utils.ScheduleUtils;
 import org.quartz.JobDataMap;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
@@ -24,23 +23,23 @@ import java.util.List;
  * @author ruoyi
  */
 @Service
-public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobService
+public class SysJobServiceImpl implements ISysJobService
 {
     @Autowired
     private Scheduler scheduler;
 
     @Autowired
-    private com.huida.hd.job.mapper.SysJobMapper jobMapper;
+    private SysJobMapper jobMapper;
 
     /**
      * 项目启动时，初始化定时器 主要是防止手动修改数据库导致未同步到定时任务处理（注：不能手动修改数据库ID和任务组名，否则会导致脏数据）
      */
     @PostConstruct
-    public void init() throws SchedulerException, TaskException
+    public void init() throws SchedulerException
     {
         scheduler.clear();
         List<SysJob> jobList = jobMapper.selectJobAll();
-        for (com.huida.hd.job.entity.SysJob job : jobList)
+        for (SysJob job : jobList)
         {
             ScheduleUtils.createScheduleJob(scheduler, job);
         }
@@ -53,7 +52,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      * @return
      */
     @Override
-    public List<SysJob> selectJobList(com.huida.hd.job.entity.SysJob job)
+    public List<SysJob> selectJobList(SysJob job)
     {
         return jobMapper.selectJobList(job);
     }
@@ -65,7 +64,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      * @return 调度任务对象信息
      */
     @Override
-    public com.huida.hd.job.entity.SysJob selectJobById(Long jobId)
+    public SysJob selectJobById(Long jobId)
     {
         return jobMapper.selectJobById(jobId);
     }
@@ -77,7 +76,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int pauseJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException
+    public int pauseJob(SysJob job) throws SchedulerException
     {
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
@@ -97,7 +96,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int resumeJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException
+    public int resumeJob(SysJob job) throws SchedulerException
     {
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
@@ -117,7 +116,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int deleteJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException
+    public int deleteJob(SysJob job) throws SchedulerException
     {
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
@@ -141,7 +140,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
     {
         for (Long jobId : jobIds)
         {
-            com.huida.hd.job.entity.SysJob job = jobMapper.selectJobById(jobId);
+            SysJob job = jobMapper.selectJobById(jobId);
             deleteJob(job);
         }
     }
@@ -153,7 +152,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int changeStatus(com.huida.hd.job.entity.SysJob job) throws SchedulerException
+    public int changeStatus(SysJob job) throws SchedulerException
     {
         int rows = 0;
         String status = job.getStatus();
@@ -175,11 +174,11 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public void run(com.huida.hd.job.entity.SysJob job) throws SchedulerException
+    public void run(SysJob job) throws SchedulerException
     {
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
-        com.huida.hd.job.entity.SysJob properties = selectJobById(job.getJobId());
+        SysJob properties = selectJobById(job.getJobId());
         // 参数
         JobDataMap dataMap = new JobDataMap();
         dataMap.put(ScheduleConstants.TASK_PROPERTIES, properties);
@@ -193,7 +192,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int insertJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException, TaskException
+    public int insertJob(SysJob job) throws SchedulerException
     {
         job.setStatus(ScheduleConstants.Status.PAUSE.getValue());
         int rows = jobMapper.insertJob(job);
@@ -211,9 +210,9 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      */
     @Override
     @Transactional
-    public int updateJob(com.huida.hd.job.entity.SysJob job) throws SchedulerException, TaskException
+    public int updateJob(SysJob job) throws SchedulerException
     {
-        com.huida.hd.job.entity.SysJob properties = selectJobById(job.getJobId());
+        SysJob properties = selectJobById(job.getJobId());
         int rows = jobMapper.updateJob(job);
         if (rows > 0)
         {
@@ -228,7 +227,7 @@ public class SysJobServiceImpl implements com.huida.hd.job.service.ISysJobServic
      * @param job 任务对象
      * @param jobGroup 任务组名
      */
-    public void updateSchedulerJob(com.huida.hd.job.entity.SysJob job, String jobGroup) throws SchedulerException, TaskException
+    public void updateSchedulerJob(SysJob job, String jobGroup) throws SchedulerException
     {
         Long jobId = job.getJobId();
         // 判断是否存在
