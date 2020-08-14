@@ -110,6 +110,7 @@ public class RealTimeDataFetchJob extends QuartzJobBean {
                     }
                 }).filter(Objects::nonNull).forEach(message -> {
                     try {
+                        // 发送到消息队列中计算出指标，，MACD，，MA，，神奇通道
                         mqProducer.send(message);
                     } catch (MQClientException | RemotingException | MQBrokerException | InterruptedException e) {
                         log.error(e.getMessage());

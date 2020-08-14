@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.killer</groupId>
-        <artifactId>t0</artifactId>
+        <artifactId>spring-cloud-services</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>t0-data</artifactId>
@@ -17,10 +17,6 @@
         <module>t0-data-fetch</module>
         <module>t0-data-analysis</module>
     </modules>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -48,8 +44,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

@@ -18,6 +18,7 @@
         <module>spring-cloud-services</module>
         <module>spring-cloud-sentinel</module>
         <module>spring-cloud-circuitbreaker</module>
+        <module>spring-cloud-quartz</module>
     </modules>
 
     <properties>
@@ -40,6 +41,12 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>2.2.1.RELEASE</version>
         </dependency>
 
