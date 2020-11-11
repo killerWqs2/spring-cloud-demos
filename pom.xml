@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.killer</groupId>
-    <artifactId>sprng-cloud-demos</artifactId>
+    <artifactId>spring-cloud-demos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-demos</name>
     <packaging>pom</packaging>
@@ -20,6 +20,7 @@
         <module>spring-cloud-circuitbreaker</module>
         <module>spring-cloud-quartz</module>
         <module>spring-cloud-common</module>
+        <module>spring-cloud-hadoop</module>
     </modules>
 
     <properties>
